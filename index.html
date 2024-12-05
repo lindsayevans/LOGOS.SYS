@@ -47,9 +47,22 @@
         }
       }
     </style>
-    <script defer data-domain="itsnowsafetoturnoffyourcomputer.net" src="https://plausible.io/js/script.js"></script>
+    <script
+      defer
+      data-domain="itsnowsafetoturnoffyourcomputer.net"
+      src="https://plausible.io/js/script.js"
+    ></script>
   </head>
   <body>
     <h1>It's now safe to turn off your computer.</h1>
+    <script>
+      document.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      });
+    </script>
   </body>
 </html>
